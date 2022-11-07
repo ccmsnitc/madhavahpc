@@ -1,0 +1,1125 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This documet covers vide range of topics from detailed description of hardware infrastructure to the information required to utilize the Madhava HPC Cluster installed in CCMS, NIT Calicut effectively ">
+      
+      
+        <meta name="author" content="CCMS NITC">
+      
+      
+      <link rel="icon" href="../assets/logo_black.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
+    
+    
+      
+        <title>Getting started - Centre for Computational Modelling and Simulation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/termynal.css">
+    
+      <link rel="stylesheet" href="../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link rel="stylesheet" href="../overrides/assets/stylesheets/main.c1d34250.min.css">
+  <link rel="stylesheet" href="../overrides/stylesheets/global.css">
+
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <span class="title">NEWS</span>
+  <div class="marquee">
+    <ul class="marquee-content" id="news-container">
+    </ul>
+  </div>
+      <script src="../assets/js/news.js"></script>
+      <script type="text/javascript">
+        loadNews("../news.json")
+      </script>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Centre for Computational Modelling and Simulation" class="md-header__button md-logo" aria-label="Centre for Computational Modelling and Simulation" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Centre for Computational Modelling and Simulation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Getting started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../softwares/" class="md-tabs__link">
+        Softwares
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../storage/" class="md-tabs__link">
+        Some Other Topics
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../contact_us/" class="md-tabs__link">
+      Contact Us
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Centre for Computational Modelling and Simulation" class="md-nav__button md-logo" aria-label="Centre for Computational Modelling and Simulation" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Centre for Computational Modelling and Simulation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Getting started
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-configuration" class="md-nav__link">
+    System Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-an-account-for-you" class="md-nav__link">
+    Get an Account for You
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-access" class="md-nav__link">
+    System Access
+  </a>
+  
+    <nav class="md-nav" aria-label="System Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remote-access" class="md-nav__link">
+    Remote Access
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-ssh-in-windows" class="md-nav__link">
+    Using ssh in Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-ssh-in-mac-or-linux" class="md-nav__link">
+    Using ssh in Mac or Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-policy-and-guidelines" class="md-nav__link">
+    Usage Policy and Guidelines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-of-hpc" class="md-nav__link">
+    Best Practices of HPC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferring-files-between-local-machine-and-hpc-cluster" class="md-nav__link">
+    Transferring files between local machine and HPC cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-interactive-jobs" class="md-nav__link">
+    Running Interactive Jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-jobs" class="md-nav__link">
+    Managing Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-partition" class="md-nav__link">
+    List Partition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submit-the-job" class="md-nav__link">
+    Submit the Job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-jobs" class="md-nav__link">
+    List jobs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-job-details" class="md-nav__link">
+    Get job details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suspend-a-job-root-only" class="md-nav__link">
+    Suspend a job (root only):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resume-a-job-root-only" class="md-nav__link">
+    Resume a job (root only):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hold-a-job" class="md-nav__link">
+    Hold a job:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-about-batch-jobs-slurm" class="md-nav__link">
+    More about Batch Jobs (SLURM)
+  </a>
+  
+    <nav class="md-nav" aria-label="More about Batch Jobs (SLURM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters-used-in-slurm-job-script" class="md-nav__link">
+    Parameters used in SLURM job Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-useful-slurm-commands" class="md-nav__link">
+    Some useful SLURM commands.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addressing-basic-security-concerns" class="md-nav__link">
+    Addressing Basic Security Concerns
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Softwares
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Softwares" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Softwares
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../softwares/" class="md-nav__link">
+        Software
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Some Other Topics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Some Other Topics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Some Other Topics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../queueing/" class="md-nav__link">
+        Queuing System
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact_us/" class="md-nav__link">
+        Contact Us
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Getting started</h1>
+
+<h2 id="introduction"><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Centre for Computational Modelling and Simulation (CCMS) aims to promote and support computational modelling as a mainstream research activity amongst the faculty and researchers of NIT Calicut. A High Performance Computing (HPC) Cluster and NVIDIA DGX Station purchased under HEFA are the major computing facility under this centre. The facility consists of 31 CPU nodes and 2 GPU nodes. The NVIDIA DGX Station has four V100 GPU accelerators. The facility is mainly for developing and running parallel codes for research purposes. The HPC system installed has been ranked as the 38<sup>th</sup> in the list of top 100 computing machines in India, in January 2021, a list maintained by <strong><em>CDAC, Bangalore</em></strong> <a href="https://topsc.cdacb.in/topsc.php/filterdetails?slug=January2021">click here</a>. </p>
+<h2 id="system-configuration"><strong>System Configuration</strong><a class="headerlink" href="#system-configuration" title="Permanent link">&para;</a></h2>
+<p>Wanted to know about system configuration 😀? Check the it <a href="../system_configuration/">here</a></p>
+<h2 id="get-an-account-for-you"><strong>Get an Account for You</strong><a class="headerlink" href="#get-an-account-for-you" title="Permanent link">&para;</a></h2>
+<p>Centre for computational Modelling and Simulation (CCMS) comprises of a High Performance Computing cluster and a DGX Station that are available to both faculty and students. Inorder to get an account you may <a href="http://www.nitc.ac.in/app/webroot/img/upload/Uersform-ccms.pdf">download the application</a> and submit filled application to the mail id : <strong><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#99;&#109;&#115;&#97;&#100;&#109;&#105;&#110;&#64;&#110;&#105;&#116;&#99;&#46;&#97;&#99;&#46;&#105;&#110;">&#99;&#99;&#109;&#115;&#97;&#100;&#109;&#105;&#110;&#64;&#110;&#105;&#116;&#99;&#46;&#97;&#99;&#46;&#105;&#110;</a></strong> or through hardcopy</p>
+<p>You will be notified once your account is approved. For NITC students, recommendation from the guide/ faculty is mandatory. A short proposal describing the computing to be carried out, justification for the use of HPC facility and expected outcome (1 page only) is to be attached with the submitted form. </p>
+<h2 id="system-access"><strong>System Access</strong><a class="headerlink" href="#system-access" title="Permanent link">&para;</a></h2>
+<p>The cluster can be accessed through Master node, which allows users to login, to submit jobs, transfer data and to compile source code. (If your compilation takes more than a few minutes, you should submit the compilation job into the queue to be run on the cluster.)</p>
+<p>By default, a user will have access to home directory (/gpfs-home/) This directory is available on the login node as well as the other nodes on the cluster. And the /gpfs-scratch/ directory may be used for temporary data storage, generally used to store data required for running jobs. Any data stored in /gpfs-scratch will be deleted after 30 days.</p>
+<h3 id="remote-access"><strong>Remote Access</strong><a class="headerlink" href="#remote-access" title="Permanent link">&para;</a></h3>
+<h4 id="using-ssh-in-windows"><code>Using ssh in Windows</code><a class="headerlink" href="#using-ssh-in-windows" title="Permanent link">&para;</a></h4>
+<dl>
+<dd>Windows systems do not have any built-in support for using SSH, so you will have to download a software package to use SSH. PuTTY is the most popular open source (ie free) SSH client for Windows. To install it, visit the download site, and download the Installer package. Once installed, find the PuTTy application shortcut in your Start Menu, desktop. On clicking the PuTTy icon The PuTTy Configuration dialog should appear: Locate the Host Name input box in the PuTTy Configuration screen. Enter the server name you wish to connect to (e.g. [username]@[hpcipaddress]), and click Open. Enter your password when prompted, and press Enter. You are now connected!</dd>
+</dl>
+<h4 id="using-ssh-in-mac-or-linux"><code>Using ssh in Mac or Linux</code><a class="headerlink" href="#using-ssh-in-mac-or-linux" title="Permanent link">&para;</a></h4>
+<dl>
+<dd>Both Mac and Linux systems provide a built-in SSH client, so there is no need to install an additional package. Simply locate and run the Terminal app. Once in the terminal, you can connect to an SSH server by typing the following command:</dd>
+</dl>
+<div class="termy">
+
+            <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">// to access from your pc </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">user@my-pc:~$ </span>ssh username@hostid
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">// if a remote GUI section is required</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">user@my-pc:~$ </span>ssh username@hostid -X
+</code></pre></div>
+
+  </div>
+
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p>Your user name and the hostid will be recieved through mail. Please check that. and replace username &amp; hostid with appropriate value</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">How to change the user password?</p>
+<p>Use the "passwd" command to change the password for the user from the login node. </p>
+</div>
+<h2 id="usage-policy-and-guidelines"><strong>Usage Policy and Guidelines</strong><a class="headerlink" href="#usage-policy-and-guidelines" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Application software available in the system / installed by user is to be used for academic purpose only and cannot be used for the monetary benefit of an individual or a company.</li>
+<li>To protect the security of the system, the user should neither provide his/her password nor allow other individuals to use his/her account. The system administrators may verify the above fact at any point of time. If found guilty, the user id will be cancelled without further reference to the user.</li>
+<li>Individuals who attempt to use accounts, files, system resources or other facilities without authorization or those who aid other individuals doing so, may be committing a criminal act and may be subjected to criminal prosecution.</li>
+<li>It is the responsibility of each individual user to know what effects the use of certain programs and/or facilities can have on other users and/or facilities, whether it may damage system resources or severely inconvenience other users currently using the system.</li>
+<li>System files and other application software installed by users and provided under license are not to be copied or tampered with.</li>
+<li>A Project Report is to be submitted at the end of the project.(1 page max.)</li>
+<li>Acknowledgement of the use of the center’s facilities should be made in journal publications, dissertations, theses, conference publications and reports published by the users.</li>
+<li>Any outcomes of the project, in terms of publications (journal / conference proceedings etc.) should be communicated to the center.</li>
+<li>Student Accounts will be deleted and the user files removed on graduation. </li>
+</ul>
+<h2 id="best-practices-of-hpc"><strong>Best Practices of HPC</strong><a class="headerlink" href="#best-practices-of-hpc" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Do not go over your storage quota. Exceeding your storage quota can lead to many problems including batch jobs failing, confusing error messages and the inability to use X11 forwarding. Be sure to routinely run the "du -sh ~/ " command to check your usage. If more space is needed then remove files.</li>
+<li>Do not run jobs on the Master node. When you connect to a cluster via SSH you land on the Master node which is shared by all users. The login node is reserved for submitting jobs, compiling codes, installing software and running short tests that use only a few CPU-cores and finish within a few minutes. Anything more intensive must be submitted to the Slurm job scheduler as either a batch or interactive job. Failure to comply with this rule may result in your account being suspended.</li>
+<li>Do not try to access the Internet from batch or interactive jobs. All jobs submitted to the Slurm job scheduler run on the compute nodes which do not have Internet access. Because of this, a running job cannot download files, install packages or connect to GitHub. You will need to perform these operations on the login node before submitting the job.</li>
+<li>Do not allocate more than one CPU-core for serial jobs. Serial codes cannot run in parallel so using more than one CPU-core will not cause the job to run faster. Instead, doing so will waste resources. See the Slurm page for tips on figuring out if your code can run in parallel and for information about Job Arrays which allow one to run many jobs simultaneously.</li>
+<li>Do not run jobs with a parallel code without first conducting a scaling analysis. If your code runs in parallel then you need to determine the optimal number of nodes and CPU-cores to use. The same is true if it can use multiple GPUs. To do this, perform a scaling analysis as described in Choosing the Number of Nodes, CPU-cores and GPUs.</li>
+<li>Do not request a GPU for a code that can only use CPUs. Only codes that have been explicitly written to use GPUs can take advantage of GPUs. Allocating a GPU for a CPU-only code will not speed-up the execution time but it will increase your queue time, waste resources. Furthermore, some codes are written to use only a single GPU. For more see GPU Computing and Choosing the Number of Nodes, CPU-cores and GPUs.</li>
+<li>Do not load environment modules using only the partial name. You should always specify the full name of the environment module (e.g., module load compilers/intel/parallel_studio_xe_2020.4.912) and on some clusters failing to do so will result in an error. Also, you should avoid loading environment modules in your ~/.bashrc file. Instead, do this in Slurm scripts and on the command line when needed.</li>
+<li>Please do not use spaces while creating the directories and files.</li>
+</ul>
+<h2 id="transferring-files-between-local-machine-and-hpc-cluster"><strong>Transferring files between local machine and HPC cluster</strong><a class="headerlink" href="#transferring-files-between-local-machine-and-hpc-cluster" title="Permanent link">&para;</a></h2>
+<p>Users need to have the data and application related to their project/research work on Madhava HPC Cluster</p>
+<p>To store the data special directories have been made available to the users with name “scratch and home” the path to this directory is “/gpfs-scratch” and “/gpfs-home”. Whereas these directories are common to all the users, a user will get his own directory with their username in /gpfs-scratch/ as well as /home-home/ directories where they can store their data. However, there is limit to the storage provided to the users, the limits have been defined according to quota over these directories, all users will be allotted same quota by default. When a user wishes to transfer data from their local system (laptop/desktop) to HPC system, they can use various methods and tools</p>
+<p>A user using the ‘Windows’ operating system will get methods and tools that are native to Microsoft Windows and tools that could be installed on your Microsoft Windows machine.Linux operating system users do not require any tool. They can just use “scp” command on their terminal, as mentioned below.</p>
+<p>Users are advised to keep a copy of their data with themselves, once the project/research work is completed by transferring the data in from Madhava HPC Cluster to their local system (laptop/desktop). The command shown below can be used for effecting file transfers (In all the tools):</p>
+<div class="highlight"><pre><span></span><code>    scp –r [path to the local data directory] [your username]@[IP of Madhava HPC:[path to directory on HPC where to save the data]
+</code></pre></div>
+<p>for example:</p>
+<div class="highlight"><pre><span></span><code>    scp –r /dir/dir/file sajil@:/gpfs-home/sajil
+</code></pre></div>
+<p>Same Command could be used to transfer data from HPC system to your local system (laptop/desktop).</p>
+<div class="highlight"><pre><span></span><code>    scp –r   [your username]@[IP of Madhava HPC:[path todirectory on HPC where to save the data] [path to the local data directory]
+</code></pre></div>
+<p>for example:</p>
+<div class="highlight"><pre><span></span><code>    scp –r  sajil@[cluster IP/Name]:/gpfs-home/sajil/file /dir/dir/file
+</code></pre></div>
+<h2 id="running-interactive-jobs"><strong>Running Interactive Jobs</strong><a class="headerlink" href="#running-interactive-jobs" title="Permanent link">&para;</a></h2>
+<p>In general, the jobs can be run in an interactive manner or in batch mode. You can run an interactive job as follows:</p>
+<p>The following command asks for a single core in testq for one hour with a default amount of memory.</p>
+<div class="highlight"><pre><span></span><code>    srun --nodes=1 --ntasks-per-node=1 --time=01:00:00 –partition=testq –job-name= job-name --pty /usr/bin/bash
+</code></pre></div>
+<p>The command prompt will appear as soon as the job starts. This is how it looks once the interactive job starts:</p>
+<p>image</p>
+<p>Exit the bash shell to end the job. If you exceed the time or memory limits the job will also abort. Please note that Madhava HPC Cluster is NOT meant for executing interactive jobs. However, for the purpose of quickly ascertaining successful run of a job before submitting a large job in batch (with large iteration counts), this can be used. This can even be used for running small jobs. The point to be kept in mind is that, since others too would be using this node, it is prudent not to inconvenience them by running large jobs.</p>
+<h2 id="managing-jobs"><strong>Managing Jobs</strong><a class="headerlink" href="#managing-jobs" title="Permanent link">&para;</a></h2>
+<p>Madhava HPC Cluster extensively uses modules. The purpose of the module is to provide the production environment for a given application, outside of the application itself. This also specifies which version of the application is available for a given session. All applications and libraries are made available through module files. A User has to load the appropriate module from the available modules.</p>
+<div class="highlight"><pre><span></span><code>    module avail # This command lists all the available modules
+    module load compilers/intel/parallel_studio_xe_2020.4.912 # This will load the intel compilers into your environment
+    module unload compilers/intel/parallel_studio_xe_2020.4.912 # This will remove all environment setting related to intel compiler loaded previously
+    module list #This will list currently loaded modules.
+</code></pre></div>
+<p>image</p>
+<p><code>A simple Slurm job script</code></p>
+<div class="highlight"><pre><span></span><code>    #!/bin/sh
+    #SBATCH --nodes 1 // specifies number of nodes
+    #SBATCH --ntasks-per-node=40 // specifies core per node
+    #SBATCH --time=06:50:20 // specifies maximum duration of run
+    #SBATCH --job-name=lammps // specifies job name
+    #SBATCH --output=job_output.txt //specifies output file name
+    #SBATCH --partition=shortq // specifies queue name
+
+
+
+
+    #SBATCH --ntasks=10 //specifies total no of cores required 
+    ##########################################################
+    echo “Job Submitted”
+    #load required modules
+    module load ...
+    #------------- run your commands here—-----------------#
+    mpirun -n $SLURM_NTASKS ...
+    echo “Job finished successfully”
+</code></pre></div>
+<h3 id="list-partition"><strong>List Partition</strong><a class="headerlink" href="#list-partition" title="Permanent link">&para;</a></h3>
+<p>sinfo displays information about nodes and partitions(queues).</p>
+<div class="highlight"><pre><span></span><code>    sinfo
+</code></pre></div>
+<h3 id="submit-the-job"><strong>Submit the Job</strong><a class="headerlink" href="#submit-the-job" title="Permanent link">&para;</a></h3>
+<p>To Submitting a simple standalone job , This is a simple submit script which is to be submitted</p>
+<div class="highlight"><pre><span></span><code>    sbatch job-script-name
+</code></pre></div>
+<h3 id="list-jobs"><strong>List jobs</strong><a class="headerlink" href="#list-jobs" title="Permanent link">&para;</a></h3>
+<p>Monitoring jobs on SLURM can be done using the command squeue. squeue is used to view job and job step information for jobs managed by SLURM
+        squeue</p>
+<h3 id="get-job-details"><strong>Get job details</strong><a class="headerlink" href="#get-job-details" title="Permanent link">&para;</a></h3>
+<p>scontrol can be used to report more detailed information about nodes, partitions, jobs, job steps, and configuration.</p>
+<div class="highlight"><pre><span></span><code>    scontrol show node - shows detailed information about compute nodes.
+    scontrol show partition - shows detailed information about a specific partition
+    scontrol show job - shows detailed information about a specific job or all jobs if no job id isgiven.
+    scontrol update job - change attributes of submitted job.
+</code></pre></div>
+<h3 id="suspend-a-job-root-only"><strong>Suspend a job (root only):</strong><a class="headerlink" href="#suspend-a-job-root-only" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>    # scontrol suspend 135
+    # squeue
+    JOBID PARTITION NAME     USER  ST TIME NODES NODELIST(REASON)
+    135   shortq    simple.s user1 S  0:13  1     compute01
+</code></pre></div>
+<h3 id="resume-a-job-root-only"><strong>Resume a job (root only):</strong><a class="headerlink" href="#resume-a-job-root-only" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>    # scontrol resume 135
+    # squeue
+    JOBID PARTITION NAME     USER  ST TIME NODES NODELIST(REASON)
+    135   shortq    simple.s user1 R  0:13 1     compute01
+</code></pre></div>
+<p><strong>Kill a job.</strong></p>
+<p>Users can kill their own jobs, root can kill any job.</p>
+<div class="highlight"><pre><span></span><code>    $ scancel 135
+    $ squeue
+    JOBID PARTITION NAME USER ST TIME NODES NODELIST(REASON)
+</code></pre></div>
+<h3 id="hold-a-job"><strong>Hold a job:</strong><a class="headerlink" href="#hold-a-job" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>    $ scontrol hold 139
+    Release a job:
+    $ scontrol release 139
+</code></pre></div>
+<h2 id="more-about-batch-jobs-slurm"><strong>More about Batch Jobs (SLURM)</strong><a class="headerlink" href="#more-about-batch-jobs-slurm" title="Permanent link">&para;</a></h2>
+<p>SLURM (Simple Linux Utility for Resource Management) is a workload manager that provides a framework for job queues, allocation of compute nodes, and the start and execution of jobs.</p>
+<p>It is important to note:</p>
+<ul>
+<li>Compilations are done on the login node. Only the execution is scheduled via SLURM on the compute/GPU nodes</li>
+<li>Upon Submission of a Job script, each job gets a unique Job Id. This can be obtained from the ‘squeue’ command.</li>
+<li>The Job Id is also appended to the output and error filenames.</li>
+</ul>
+<h3 id="parameters-used-in-slurm-job-script"><strong>Parameters used in SLURM job Script</strong><a class="headerlink" href="#parameters-used-in-slurm-job-script" title="Permanent link">&para;</a></h3>
+<p>The job flags are used with SBATCH command. The syntax for the SLURM directive in a script is "#SBATCH ". Some of the flags are used with the srun and salloc commands.</p>
+<table>
+<thead>
+<tr>
+<th>Resource Flag</th>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>partition</td>
+<td>--partition=partition-name</td>
+<td>Partition is a queue for jobs.</td>
+</tr>
+<tr>
+<td>time</td>
+<td>--time=01:00:00</td>
+<td>Time limit for the job.</td>
+</tr>
+<tr>
+<td>nodes</td>
+<td>--nodes=2</td>
+<td>Number of compute nodes for for the job</td>
+</tr>
+<tr>
+<td>cpus/cores</td>
+<td>--ntasks-per-node=8</td>
+<td>Corresponds to number of cores on the compute node</td>
+</tr>
+<tr>
+<td>job name</td>
+<td>--job-name="job-1"</td>
+<td>Name of job</td>
+</tr>
+<tr>
+<td>output file</td>
+<td>--output=job-1.out</td>
+<td>Name of file for stdout.</td>
+</tr>
+<tr>
+<td>access</td>
+<td>--exclusive</td>
+<td>Exclusive access to computenodes</td>
+</tr>
+<tr>
+<td>resource</td>
+<td>--gres=gpu:2</td>
+<td>Request use of GPUs on compute node</td>
+</tr>
+</tbody>
+</table>
+<h3 id="some-useful-slurm-commands"><strong>Some useful SLURM commands.</strong><a class="headerlink" href="#some-useful-slurm-commands" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sl No</th>
+<th>Purpose</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>To check the queue status</td>
+<td>squeue</td>
+</tr>
+<tr>
+<td>2</td>
+<td>To check the status/ availability of nodes</td>
+<td>sinfo</td>
+</tr>
+<tr>
+<td>3</td>
+<td>To cancel a job running</td>
+<td>scancel  note: job id can be obtained by command squeue</td>
+</tr>
+<tr>
+<td>4</td>
+<td>To check the jobs of a particular user</td>
+<td>squeue -u</td>
+</tr>
+<tr>
+<td>5</td>
+<td>To list all running jobs of a user</td>
+<td>squeue -u -t RUNNING</td>
+</tr>
+<tr>
+<td>6</td>
+<td>To list all pending jobs of a user</td>
+<td>squeue -u -t PENDING</td>
+</tr>
+<tr>
+<td>7</td>
+<td>To cancel all the pending jobs for a user</td>
+<td>scancel -t PENDING -u username</td>
+</tr>
+</tbody>
+</table>
+<h2 id="addressing-basic-security-concerns"><strong>Addressing Basic Security Concerns</strong><a class="headerlink" href="#addressing-basic-security-concerns" title="Permanent link">&para;</a></h2>
+<p>Your account on Madhava HPC Cluster is ‘private to you’. You are responsible for any actions emanating from your account. It is suggested that you should never share the password to anyone.</p>
+<p>Please note that, by default, a new account created on Madhava HPC Cluster is readable by everyone on the system. The following simple commands will make your account adequately safe.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Discription</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chmod 700 [directory name]</td>
+<td>will ensure that only yourself can read, write and execute files in your directory</td>
+</tr>
+<tr>
+<td>chmod 750 [directory name]</td>
+<td>will enable yourself and the members of your group to read and execute files in your directory</td>
+</tr>
+<tr>
+<td>chmod 775 [directory name]</td>
+<td>will enable yourself, your group members and everyone else to read and execute files in your directory</td>
+</tr>
+<tr>
+<td>chmod 777 [directory name]</td>
+<td>will enable EVERY ONE on the system to read, write and execute files in your directory. This is a sort of ‘free for all’ situation. This should be used very judiciously</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../softwares/" class="md-footer__link md-footer__link--next" aria-label="Next: Software" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Software
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.tabs.link", "navigation.expand", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      
+        <script src="../assets/js/termynal.js"></script>
+      
+        <script src="../assets/js/custom.js"></script>
+      
+    
+  </body>
+</html>
